@@ -1,8 +1,37 @@
 # MMcc
 
+## EN intro
+
+modified from Jiang,2012. A phase weighting multichannel cross-correlation strategy to pick relative arrival time.
+
+MMCC_test.jupyter contains full function, but without a proper management.
+
+original formula is 
+
+$$ 
+C_{\mathrm{mmmcc}}(\tau)=\frac{\sum_{k=1}^{N} S_{j}(t+k \cdot \delta t-\tau) \cdot S_{k}(t+k \cdot \delta t) \cdot\left|\cos \left(\frac{\phi_{j}(t+k \cdot \delta t-\tau)-\phi_{k}(t+k \cdot \delta t)}{2}\right)\right|^{v}}{\sqrt{\sum_{k=1}^{N}\left|S_{j}(t+k \cdot \delta t-\tau)\right|^{2} \cdot \sum_{k=1}^{N}\left|S_{k}(t+k \cdot \delta t)\right|^{2}}}
+$$
+
+setting v=2, then we tear it down to sig,cig,hig,norm_base 4 parts. 
+
+$$
+\begin{aligned}
+cig&=signals(t)*\cos(\phi(t))
+sig&=signals(t)*\sin(\phi(t))
+hig&=signals(t)
+\end{aligned}
+$$
+
+norm_base just for normalization
+
+
+## 中文介绍
+
 根据江国明，2012 地球物理学报的内容与脚本改写。
 
 相位加权的多道互相关算法，原式如下 
+
+jupyter notebook里有完整的功能，不需要py文件，但没整理好。
 
 $$ 
 C_{\mathrm{mmmcc}}(\tau)=\frac{\sum_{k=1}^{N} S_{j}(t+k \cdot \delta t-\tau) \cdot S_{k}(t+k \cdot \delta t) \cdot\left|\cos \left(\frac{\phi_{j}(t+k \cdot \delta t-\tau)-\phi_{k}(t+k \cdot \delta t)}{2}\right)\right|^{v}}{\sqrt{\sum_{k=1}^{N}\left|S_{j}(t+k \cdot \delta t-\tau)\right|^{2} \cdot \sum_{k=1}^{N}\left|S_{k}(t+k \cdot \delta t)\right|^{2}}}
