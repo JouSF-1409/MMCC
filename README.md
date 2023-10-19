@@ -24,6 +24,10 @@ $$
 
 norm_base just for normalization
 
+Using suggestion: 
+1. filter to 0.1-1Hz before mcc would be nice
+2. regarding to feature of CC, total shift should less than 10% of totoal length
+
 
 ## 中文介绍
 
@@ -60,4 +64,4 @@ $$
 \sqrt{\sum_{k=1}^{N}\left|S_{j}(t+k \cdot \delta t-\tau)\right|^{2} \cdot \sum_{k=1}^{N}\left|S_{k}(t+k \cdot \delta t)\right|^{2}}
 $$
 
-根据实际经验，建议在匹配前滤波至0.1~1Hz的频段。这时结果比较清晰，高频成分较少。
+根据实际经验，建议在匹配前滤波至0.1~1Hz的频段。这时结果比较清晰，高频成分较少。并且实际shift 最好小于波形总长的10%。
